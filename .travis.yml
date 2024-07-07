@@ -7,3 +7,16 @@ before_install:
 
 script:
   - docker run -e CI=true ashishkatkade/docker-practice npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  #Region code from url of elasticbeanstalk Frontend-env.eba-kberreuw.eu-north-1.elasticbeanstalk.com
+  region: "eu-north-1"
+  app: "frontend"
+  env: "Frontend-env"
+  bucket_name: "elasticbeanstalk-eu-north-1-590183798187"   #s3 bucket service would have the bucket name
+  bucket_path: "frontend"  #for first time bucket path name would same as app name
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: "$AWS_SECRET_KEY"
