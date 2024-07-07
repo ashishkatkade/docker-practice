@@ -17,6 +17,6 @@ deploy:
   bucket_name: "elasticbeanstalk-eu-north-1-590183798187"   #s3 bucket service would have the bucket name
   bucket_path: "frontend"  #for first time bucket path name would same as app name
   on:
-    branch: master
+    branch: main
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: "$AWS_SECRET_KEY"
